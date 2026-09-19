@@ -4,7 +4,6 @@ import { Transform } from 'node:stream'
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
-const port = process.env.PORT || 5173
 const base = process.env.BASE || '/'
 const ABORT_DELAY = 10000
 
@@ -95,7 +94,4 @@ app.use('*all', async (req, res) => {
   }
 })
 
-// Start http server
-app.listen(port, () => {
-  console.log(`Server started at http://localhost:${port}`)
-})
+export default app;
